@@ -3,21 +3,27 @@ Console.WriteLine("Rock Paper Scissors");
 
 
 
-// while(true){
-//     Console.WriteLine("Are you ready?");
-//     Console.WriteLine("Let's begin!!!");
+while(true){
+    Console.WriteLine("Are you ready?");
+    Console.WriteLine("Let's begin!!!");
 
-//     Console.WriteLine("Choose R, P or S []: [R]ock, [P]aper, or [S]cissors: ");
-//     var selectedChoise = Console.ReadLine(); //espera a q el usuario escriba un comando
+    var selectedChoice = SelectChoice();
+    var yourChoice = char.Parse(selectedChoice);
 
-//     // if(selectedChoise?.ToLower() != 'r' or )
-//     Console.WriteLine(selectedChoise);
+    Console.WriteLine($"You Selected {yourChoice}");    
+}; 
 
-//     if(selectedChoise!=null && selectedChoise.Contains("R"))
-//     {
-//         Console.WriteLine("Rocks");
-//     }
-    
-// }; 
+string SelectChoice()
+{
+    Console.WriteLine("Choose R, P or S []: [R]ock, [P]aper, or [S]cissors: ");
+    var selectedChoice = Console.ReadLine(); //espera a q el usuario escriba un comando
 
-Console.WriteLine('Hola Peter probando tu primer pull');
+    // if(selectedChoise?.ToLower() != 'r' or )
+    if(selectedChoice?.ToLower() != "r" && selectedChoice?.ToLower() != "p" && selectedChoice?.ToLower() != "s")
+    {
+        Console.WriteLine("Please, select only one letter: R, P o S");
+        selectedChoice = SelectChoice();
+    }
+
+    return selectedChoice;
+}
