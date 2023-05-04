@@ -1,1 +1,4 @@
-//HOLA PETER ESTE ES EL README DEPRUEBA
+los archivos ignorados del proyecto son:
+-obj
+-bin
+-.vscode

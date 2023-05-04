@@ -11,6 +11,11 @@ while(true){
     var yourChoice = char.Parse(selectedChoice);
 
     Console.WriteLine($"You Selected {yourChoice}");    
+
+    var opponetChoice = GetOpponentChoice();
+    Console.WriteLine("----------");
+    Console.WriteLine($"I Choice {opponetChoice}");
+    Console.WriteLine("----------");
 }; 
 
 string SelectChoice()
@@ -24,6 +29,16 @@ string SelectChoice()
         Console.WriteLine("Please, select only one letter: R, P o S");
         selectedChoice = SelectChoice();
     }
-
     return selectedChoice;
+};
+
+char GetOpponentChoice()
+{
+    char[] options = new char[] { 'R', 'P', 'S'};
+
+    Random random = new Random();
+
+    int randomIndex = random.Next(0, options.Length);
+
+    return options[randomIndex];
 }
