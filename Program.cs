@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Rock Paper Scissors");
 
+
+
 while(true){
     Console.WriteLine("Are you ready?");
     Console.WriteLine("Let's begin!!!");
@@ -10,4 +12,10 @@ while(true){
 
     // if(selectedChoise?.ToLower() != 'r' or )
     Console.WriteLine(selectedChoise);
+
+    if(selectedChoise!=null && selectedChoise.Contains("R"))
+    {
+        Console.WriteLine("Rocks");
+    }
+    
 }; 
