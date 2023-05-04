@@ -17,11 +17,20 @@ while(true){
 
     DecideWinner(opponetChoice, yourChoice);
 
-}; 
+    Console.WriteLine("\n-------------\n");
+    Console.WriteLine("Do you want to play again?");
+    Console.WriteLine("Enter Yes to play again or any other key to stop...");
+
+    var playAgain = Console.ReadLine();
+    if(playAgain?.ToLower() == "yes")
+        continue;
+    else
+        break;
+};
 
 string SelectChoice()
 {
-    Console.WriteLine("Choose R, P or S []: [R]ock, [P]aper, or [S]cissors: ");
+    Console.WriteLine("Choose R, P or S: [R]ock, [P]aper, or [S]cissors: ");
     var selectedChoice = Console.ReadLine(); //espera a q el usuario escriba un comando
 
     // if(selectedChoise?.ToLower() != 'r' or )
@@ -46,8 +55,8 @@ char GetOpponentChoice()
 
 void DecideWinner(char opponetChoice, char yourChoice){
 
-    if(opponetChoice == yourChoice){
-        Console.WriteLine("Tie!");
+    if(opponetChoice.ToString().ToLower() == yourChoice.ToString().ToLower()){
+        Console.WriteLine("-------Tie!-------");
         return;
     }
 
