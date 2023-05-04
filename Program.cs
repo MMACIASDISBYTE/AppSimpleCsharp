@@ -13,9 +13,10 @@ while(true){
     Console.WriteLine($"You Selected {yourChoice}");    
 
     var opponetChoice = GetOpponentChoice();
-    Console.WriteLine("----------");
     Console.WriteLine($"I Choice {opponetChoice}");
-    Console.WriteLine("----------");
+
+    DecideWinner(opponetChoice, yourChoice);
+
 }; 
 
 string SelectChoice()
@@ -41,4 +42,38 @@ char GetOpponentChoice()
     int randomIndex = random.Next(0, options.Length);
 
     return options[randomIndex];
+};
+
+void DecideWinner(char opponetChoice, char yourChoice){
+
+    if(opponetChoice == yourChoice){
+        Console.WriteLine("Tie!");
+        return;
+    }
+
+    switch(yourChoice){
+        case 'R':
+        case 'r':
+            if(opponetChoice == 'P')
+                Console.WriteLine("Paper beats rock, I wind!");
+            else if(opponetChoice == 'S')
+                    Console.WriteLine("Rock beats Scissors, you win!");
+            break;
+        case 'S':
+        case 's':
+            if(opponetChoice == 'P')
+                Console.WriteLine("Scissor beats Paper, you wind!");
+            else if(opponetChoice == 'R')
+                    Console.WriteLine("Rock beats Scissors, I win!");
+            break;
+        case 'P':
+        case 'p':
+            if(opponetChoice == 'S')
+                Console.WriteLine("Scissors beats paper, I wind!");
+            else if(opponetChoice == 'R')
+                    Console.WriteLine("Paper beats Rock, you win!");
+            break;
+        default:
+            break;
+    };
 }
